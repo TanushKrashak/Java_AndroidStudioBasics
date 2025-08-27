@@ -25,7 +25,7 @@ public class ResultActivity extends AppCompatActivity {
         Res.setText(name.toString());
 
         Input = findViewById(R.id.Num2);
-        Send = findViewById(R.id.Google);
+        Send = findViewById(R.id.Send);
 
         Send.setOnClickListener(new View.OnClickListener() {
             @Override

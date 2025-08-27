@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -26,9 +27,15 @@ public class ResultActivity extends AppCompatActivity {
         Input = findViewById(R.id.Num2);
         Send = findViewById(R.id.Send);
 
-        Intent intent = new Intent(ResultActivity.this, MainActivity.class);
-        intent.putExtra("Name2", Input.getText().toString());
-        setResult(RESULT_OK, intent);
-        finish();
+        Send.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent();
+                intent.putExtra("Name2", Input.getText().toString());
+                setResult(RESULT_OK, intent);
+                finish();
+            }
+        });
+
     }
 }

@@ -16,7 +16,7 @@ import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
-    Button Calculate;
+    Button Send;
     EditText Num1;
     TextView Result;
 
@@ -28,7 +28,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
        // Setup All Widgets
-        Calculate = findViewById(R.id.Send);
+        Send = findViewById(R.id.Send);
         Num1 = findViewById(R.id.Num1);
         Result = findViewById(R.id.Answer);
 
@@ -37,11 +37,11 @@ public class MainActivity extends AppCompatActivity {
                     @Override
                     public void onActivityResult(ActivityResult result) {
                         Intent data = result.getData();
-                        Result.setText(data.toString());
+                        Result.setText(data.getStringExtra("Name2"));
                     }
                 });
 
-        Calculate.setOnClickListener(new View.OnClickListener() {
+        Send.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 String temp = Num1.getText().toString();

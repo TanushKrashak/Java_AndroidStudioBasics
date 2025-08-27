@@ -37,10 +37,6 @@ public class MainActivity extends AppCompatActivity {
                     @Override
                     public void onActivityResult(ActivityResult result) {
                         Intent data = result.getData();
-                        if (data == null) {
-                            Toast.makeText(MainActivity.this, "got no valid data bro", Toast.LENGTH_SHORT).show();
-                            return;
-                        }
                         Result.setText(data.getStringExtra("Name2"));
                     }
                 });
